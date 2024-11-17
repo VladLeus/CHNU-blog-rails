@@ -1,8 +1,8 @@
-<div>
-  <h1>Welcome back!</h1>
-  <h3>Ready to return to this legendary journey?</h3>
-  <%= link_to "Sign in", new_user_session_path %>
-  <hr>
-  <h3>Want to start a new legend with us?</h3>
-  <%= link_to "Sign up", new_user_registration_path %>
+<div class="container max-w-1280">
+  <h1 class="fw-bold text-dark">Welcome back!</h1>
+  <h3 class="fw-medium text-dark fs6">Ready to return to this legendary journey?</h3>
+  <%= link_to "Sign in", new_user_session_path, class: "btn btn-md btn-outline-primary text-decoration-none text-dark" %>
+  <hr class="w-100">
+  <h3 class="fw-medium text-dark fs-6">Want to start a new legend with us?</h3>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-md btn-primary text-decoration-none" %>
 </div>
