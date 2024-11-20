@@ -11,4 +11,13 @@ class User < ApplicationRecord
 
   enum role: { regular: 0, admin: 1 }
   enum gender: { male: 0, female: 1 }
+  enum status: { normal: 0, banned: 1  }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :role, :gender, :phone_number, :email, :status)
+  end
 end

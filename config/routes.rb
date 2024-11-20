@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  get "comment/create"
-  get "comment/update"
-  get "comment/edit"
-  get "comment/destroy"
   resources :posts
+  resources :comments, only: %i[create update edit destroy]
+
   devise_for :users
+
+  # Devise routes for AdminUser
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  # ActiveAdmin routes
+  ActiveAdmin.routes(self)
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

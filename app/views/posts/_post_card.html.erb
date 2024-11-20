@@ -1,0 +1,11 @@
+<div id="<%= dom_id post %>" class="card">
+  <div class="d-flex justify-content-around w-100 gap-2 roboto-regular px-3 overflow-hidden">
+    <span class="roboto-bold">Title:</span>
+    <%= post.title %>
+  </div>
+  <div class="d-flex justify-content-around gap-2 poppins-regular w-100 px-3">
+    Owner:
+    <strong><%= post.user.first_name %></strong>
+  </div>
+  <%= link_to "Go to post", post, class: "btn btn-primary poppins-regular px-2 py-1" %>
+</div>

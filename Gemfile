@@ -18,9 +18,12 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
+gem "activeadmin"
 gem "devise"
 gem "bootstrap", "~> 5.3.0"
 gem "sass-rails"
+gem "pundit"
+gem "telegram-bot-ruby"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -43,6 +46,7 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+  gem "dotenv-rails"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -52,6 +56,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  gem "byebug"
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
   gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 end

@@ -1,22 +1,22 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<div id="<%= dom_id post %>" class="container max-w-1440 gap-4">
+  <!-- Post Content -->
+  <div class="d-flex justify-content-between w-50 align-items-center">
+    <div class="d-flex justify-content-around w-50 gap-2 roboto-regular">
+      <span class="roboto-bold">Title:</span>
+      <%= post.title %>
+    </div>
+    <div class="d-flex justify-content-around align-items-center gap-2 poppins-regular w-50">
+      Owner:
+      <strong><%= post.user.full_name %></strong>
+    </div>
+  </div>
 
-  <p>
-    <strong>Article:</strong>
+  <p class="d-flex flex-column gap-1 align-items-start bg-gray-200 rounded-md roboto-regular">
+    <span class="roboto-bold">Article:</span>
     <%= post.article %>
   </p>
 
-  <p>
-    <strong>Status:</strong>
-    <%= post.status %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
+  <!-- Comments Section -->
+  <%= render partial: "posts/comments/comments_section", locals: { comments: @post.comments } %>
+  <%= render partial: "posts/comments/comment_form", locals: { comment: Comment.new(post: @post) } %>
 </div>
