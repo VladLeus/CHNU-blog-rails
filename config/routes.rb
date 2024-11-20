@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get "comment/create"
-  get "comment/update"
-  get "comment/edit"
-  get "comment/destroy"
   resources :posts
+  resources :comments, only: %i[create update edit destroy]
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

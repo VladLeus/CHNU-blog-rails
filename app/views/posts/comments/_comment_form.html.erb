@@ -1,0 +1,14 @@
+<div id="comment_form_errors"></div>
+
+<div class="d-flex flex-column align-items-start w-100">
+  <h4 class="roboto-bold mt-4">Add comment</h4>
+  <%= form_with(model: comment, html: { class: "d-flex flex-column gap-2", id: "new_comment_form" }) do |f| %>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.submit 'Post Comment', class: "btn btn-primary poppins-semibold px-2 py-1" %>
+  <% end %>
+</div>

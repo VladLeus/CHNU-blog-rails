@@ -1,0 +1,7 @@
+<% if @comment.errors.any? %>
+  <%= turbo_stream.replace "comment_form_errors", partial: "shared/error_messages", locals: { object: @comment } %>
+<% else %>
+  <%= turbo_stream.prepend "comments", partial: "posts/comments/comment", locals: { comment: @comment } %>
+  <%= turbo_stream.replace "new_comment_form", partial: "posts/comments/comment_form", locals: { comment: Comment.new } %>
+  <%= turbo_stream.replace "comment_form_errors", "" %>
+<% end %>

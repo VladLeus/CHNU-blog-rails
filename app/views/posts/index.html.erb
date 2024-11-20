@@ -1,16 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Posts" %>
 
-<h1>Posts</h1>
-
-<div id="posts">
+<h1 class="roboto-bold">Posts</h1>
+<div id="posts" class="row row-cols-4 w-100 gap-4 mb-2">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <%= render  partial: "posts/post_card", locals: { post: } %>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to "New post", new_post_path, class: "btn btn-outline-primary poppins-regular text-dark px-2 py-1" %>
